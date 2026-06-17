@@ -1,0 +1,343 @@
+@import url('https://googleapis.com');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #dcdcdc;
+    font-family: 'Inter', sans-serif;
+}
+
+/* [margin] É a distância entre o conteúdo de um elemento e os elementos adjacentes. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [padding] É a distância entre o conteúdo de um elemento e sua borda. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [box-sizing] É uma propriedade que controla como o espaçamento e a largura 
+   de um elemento são calculados. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [font-family] É uma propriedade que especifica a família de fontes a serem 
+   usadas para renderizar o texto. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [*] É uma seleção que afeta todos os elementos do documento. */
+
+/* [scroll-behavior] É uma propriedade que controla o comportamento de 
+   rolagem suave ao navegar para âncoras dentro da página. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [html] É a seleção que afeta o elemento raiz da página. */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* [root] É uma pseudo-classe que representa o elemento raiz do documento, 
+   permitindo a definição de variáveis CSS globais. 
+   (CSS globais são variáveis definidas no elemento raiz e podem ser usadas em todo o documento.) 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [--] Quando é colocado "--" e depois o nome, o programa entende como uma variável CSS 
+   Ex: Como eu quiser usar uma cor é apenas chamar a variável que fiz tipo (--cor-primaria)
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [#] É uma seleção de id de cor.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [rgba] É uma função que permite especificar uma cor com canal alpha (transparência).
+   E também pode ser usada para criar efeitos de vidro.
+   Especificação do rgba: O 4º valor representa a transparência 
+   (0 = totalmente transparente, 1 = totalmente opaco) */
+
+   :root {
+    --cor-primaria: #4f46e5;
+    --cor-secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --mais-escuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+    --botaum1: #229a00;
+    --botaum2:  #FFD700;
+}
+
+/* [background-color] É uma propriedade que define a cor de fundo de um elemento.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [color] É uma propriedade que define a cor do texto de um elemento. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [body] É a seleção que afeta o elemento body da página. 
+   */
+body {
+    background-color: var();
+    color: var(--claro);
+}
+
+/* [position] É uma propriedade que controla o tipo de posicionamento de um elemento, 
+   permitindo que ele seja fixo, relativo, absoluto ou estático. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [navegacao] É uma class que criei e representa a navegação da página 
+   (do html que está sendo modificada pelo CSS)
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+   [width] É uma propriedade que define a largura de um elemento. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [z-index] É uma propriedade que controla a ordem de sobreposição de elementos. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [padding] É uma propriedade que define a distância entre o conteúdo de um elemento e sua borda. 
+   (espaçamento interno, para os itens não ficarem muito próximos ou grudados)
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [top] É uma propriedade que define a distância entre o topo de um elemento e o topo do seu elemento pai.
+   (elemento pai é o elemento que contém o elemento em questão, ou seja, o elemento que está hierarquicamente 
+   acima dele na estrutura do documento)
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [rem] É uma unidade de medida relativa ao tamanho da fonte do elemento raiz (normalmente o elemento html). 
+   (1rem é igual ao tamanho da fonte do elemento raiz, que geralmente é 16px, então 0.5rem seria 8px)
+   */
+.navegacao {
+    position: fixed;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1rem;
+}
+
+/* [menu] É uma class que criei e representa o menu da navegação 
+   (do html que está sendo modificada pelo CSS) 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [display] É uma propriedade que controla como um elemento é exibido na página. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [list-style] É uma propriedade que controla o estilo da lista. 
+   (nesse caso tiramos o estilo padrão da lista, "aquela bolinha") 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [gap] É uma propriedade que define o espaçamento entre os elementos filhos 
+   de um contêiner flexível.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [justify-content] É uma propriedade que controla o alinhamento dos elementos 
+   filhos de um contêiner flexível. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   Especificação de elemento filho: É um elemento que está dentro de outro elemento.
+   (Um elemento filho é qualquer tag que está localizada diretamente dentro de uma tag pai em HTML).
+   Ex: <li> dentro de <ul> */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+/* [menu-link] É uma class que criei e representa os links do menu da navegação 
+   (do html que está sendo modificada pelo CSS) 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [text-decoration] É uma propriedade que define a decoração do texto de um elemento. 
+   (neste caso estou tirando o sublinhado dos links)
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [font-weight] É uma propriedade que define a espessura do texto de um elemento.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   */
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/* after -> depois | before -> antes
+Posso colocar coisas antes ou depois em um elemento.
+Ex: Animações 
+⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+[bottom] É uma propriedade que define a distância entre o fundo de um elemento 
+e o fundo do seu elemento pai. (basicamente deixa o elemento em baixo).
+⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+[left] É uma propriedade que define a distância entre o lado esquerdo de um 
+elemento e o lado esquerdo do seu elemento pai.
+⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+[background/linear-gradient] É uma propriedade que define um gradiente linear 
+como fundo de um elemento. 
+(Neste caso esta fazendo uma linha de baixo dos links da navegação). 
+⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+[transition] É uma propriedade que define a transição de estilos de um elemento.
+⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘  
+[ease] É uma função que define a velocidade de transição de um elemento.
+⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+[content] É uma propriedade que é usada com as pseudo-classes ::before e ::after para inserir conteúdo em um elemento.
+ */
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+    transition: 0.5s ease;
+}
+
+/* [hover] É uma pseudo-classe que permite aplicar estilos quando o usuário passa 
+   o mouse sobre um elemento. */
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* [cabecalho] É uma class que criei e representa o cabeçalho da página.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+   [align-items] É uma propriedade que controla o alinhamento dos elementos 
+   filhos de um contêiner flexível no eixo principal.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+   [flex-direction] É uma propriedade que define a direção do eixo principal de um contêiner flexível. 
+   Neste caso estou alinhando a foto e os textos do cabeçalho em coluna.*/
+.cabecalho {
+    min-height: 105vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rodape {
+    text-align: center;
+    background: var(--cor-primaria);
+}
+
+/* [h1] É a seleção que afeta o elemento h1 da página.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+   [font-size] É uma propriedade que define o tamanho da fonte de um elemento.
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+   [font-weight] É uma propriedade que define a espessura do texto de um elemento. 
+   */
+h1 {
+    font-size: 3.5rem;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin: 20px;
+}
+
+/* [sobre-perfil] É uma class que criei e representa o texto de perfil na seção "Sobre". */
+.sobre-perfil {
+    font-size: 2rem;
+    color: var(--escuro);
+}
+
+/* [sobre] É uma class que criei e representa a seção "Sobre". */
+.sobre {
+    padding: 6rem 2rem;
+}
+
+/* [sobre-titulo] É uma class que criei e representa o título da seção "Sobre". */
+.sobre-titulo {
+    font-size: 3rem;
+    color: var(--escuro);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* [sobre-conteudo] É uma class que criei e representa o conteúdo da seção "Sobre".
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+   [margin 0 auto] Centraliza o conteúdo automaticamente. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [max-width] Define a largura máxima do conteúdo, para que ele não fique muito esticado em telas grandes.
+   (nesse caso o conteúdo da seção "Sobre" não ficará muito esticado em telas)
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘ 
+   [border-radius/border] Neste caso estou fazendo uma caixa aonde irá ficar o
+   meu conteúdo, "border-radius" fazendo as bordas arredondadas e 
+   "border" fazendo a borda da caixa. */
+.sobre-conteudo {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--cor-primaria);
+    backdrop-filter: blur(10px);
+    /* [backdrop-filter] É uma propriedade que aplica um efeito de desfoque 
+     ao plano de fundo de um elemento, criando um efeito de vidro fosco.
+     (neste caso esta sendo aplicado da caixa do sobre mim e sempre é preciso do 
+     background para o backdrop-filter funcionar). */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* [sobre-paragrafo] É uma class que criei e representa o parágrafo da seção "Sobre". */
+.sobre-paragrafo {
+    font-size: 1.25rem;
+}
+
+
+/* [login] É uma class que criei e representa a seção de contato. 
+   (Para organizar o conteúdo). */
+.login {
+    padding: 6rem 2rem;
+}
+
+/* [login-titulo] É uma class que criei e representa o título da seção de contato.
+   (Para centralizar o título). */
+.login-titulo {
+    color: #4f46e5;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* [login-formulario] É uma class que criei e representa o formulário de contato. 
+   (Para organizar o formulário). */
+.login-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+}
+
+/* [grupo-form] É uma class que criei e representa o grupo de campos do formulário.
+   (Para organizar os campos). */
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+/* [campo-form] É uma class que criei e representa o campo de formulário. 
+   (Para estilizar o campo). */
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var();
+    outline: none;
+    /* [outline] É uma propriedade que define a borda de destaque para o campo de formulário.
+       (eu tirei a borda). */
+}
+
+/* [campo-form:focus] É uma class que criei e representa o campo de formulário quando está em foco.
+   (Neste caso, estou definindo uma borda de destaque para o campo quando ele está em foco, 
+   fazedo uma "animação")*/
+.campo-form:focus {
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+/* [botao-form] É uma class que criei e representa o botão do formulário.
+   (Para estilizar o botão).
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [background/linear-gradient] É uma propriedade que define um gradiente linear como plano de fundo.
+   (Basicamente apenas faz um gradiente com duas cores no botão).
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [deg] Atributo usado para especificar o ângulo do gradiente linear. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [font-weigh/bold] Serve para deixar o texto em negrito. Ele altera a espessura 
+   ou o "peso" da fonte, tornando os caracteres mais grossos e destacados. 
+   ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
+   [s] Significa segundo, usado para especificar a duração da transição. */
+.botao-form {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--botaum1), var(--botaum2));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+/* [botao-form:hover] É uma class que criei e representa o botão do formulário quando o 
+   mouse está sobre ele.
+   (Neste caso, estou definindo uma transformação para o botão quando ele está em foco, 
+   fazedo uma "animação")*/
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
