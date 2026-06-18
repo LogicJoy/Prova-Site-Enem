@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/enem.png">
+    <link rel="stylesheet" href="./style2.css">
+    <title>Inscrição | ENEM</title>
+</head>
+<body>
+    <header class="topo">
+        <h1>ENEM</h1>
+        <p class="subtitulo">Inscrição</p>
+    </header>
+
+    <nav class="menu">
+        <a href="painel.html">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <h2 class="login-titulo">Entre para o Enem!</h2>
+     <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+     </div>
+
+     <div>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" class="campo-cpf" placeholder="000.000.000-00" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+   
+     </div>
+
+     <div>
+        <label for="data">Data de Nascimento:</label>
+        <input type="date" id="data" name="data">
+     </div>
+
+     <div>
+        <select name="Estado">
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
+        </select>
+     </div>
+
+     <div>
+        <select name="Cidade">
+            <option value="am">Amparo</option>
+            <option value="sp2">São Paulo</option>
+            <option value="rj2">Rio de Janeiro</option>
+            <option value="pd">Pedreira</option>
+        </select>
+     </div>
+    
+        <button type="submit" class="botao-form"></button>
+    </form>
+
+    <footer class="rodape">
+        &copy; 2026 Inscrição | Enem.<br>
+        Todos os direitos reservados.
+    </footer>
+</body>
+</html>
